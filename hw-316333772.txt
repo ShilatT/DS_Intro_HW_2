@@ -1,0 +1,17 @@
+def reverse(sentence, reverse_word) :
+    if not isinstance (reverse_word, str):
+        print ("invalid input")
+    elif reverse_word not in sentence:
+        print ("The word was not found")
+    else:
+        num1 = sentence.find(reverse_word)
+        num2 = len(reverse_word)
+        if num1 == 0:
+            word2 = sentence[num2-1::-1]
+            print (sentence[:num1] + word2 + sentence[num1 + num2 :])
+        else:
+            word1 = sentence[(num2 + num1-1):num1-1:-1]
+            print ((sentence[:num1] + word1 + sentence[num1 + num2 :]))
+        
+
+reverse("i like apples and i like banana", "pony ")
